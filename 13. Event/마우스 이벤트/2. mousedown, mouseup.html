@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mousedown,mouseup</title>
+    <style>
+        .box {
+            background: yellow;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>mousedown, mouseup</h1>
+    <div class='box'></div>
+    <input class='btn_clear' type='button' value='clear'>
+    <div class='result'></div>
+    <script>
+        const div = document.querySelector('.box');
+        const btnClear = document.querySelector('.btn_clear');
+        const result = document.querySelector('.result');
+
+        div.addEventListener('click', (event) => {
+            result.innerHTML+= '<div>click</div>';
+        });
+
+        div.addEventListener('mousedown', (event) => {
+            result.innerHTML+= '<div>mousedown</div>';
+        });
+
+        div.addEventListener('mouseup', (event) => {
+            result.innerHTML+= '<div>mouseup</div>';
+        });
+
+        btnClear.addEventListener('click', (event) => {
+        result.innerHTML= '';
+        });
+    </script>
+</body>
+</html>

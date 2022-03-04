@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseover, mouseout</title>
+    <style>
+        .outBox {
+            background: skyblue;
+            height: 200px;
+            width: 200px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .inBox {
+            background: yellow;
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>mouseover, mouseout => 버블링 ⭕️</h1>
+    <div class='outBox'>
+        <div class='inBox'></div>
+    </div>
+    <input class='clearbtn' type='button' value='clear' />
+    <div class='result'></div>
+    <script>
+        const div = document.querySelector('.outBox');
+        const clearbtn = document.querySelector('.clearbtn');
+        const result = document.querySelector('.result');
+
+        div.addEventListener('mouseover', (event) => {
+            result.innerHTML+= `<div>mouseover</div>`;
+        });
+
+        div.addEventListener('mouseout', (event) => {
+            result.innerHTML+= `<div>mouseout</div>`;
+        });
+
+        clearbtn.addEventListener('click', (event) => {
+            result.innerHTML= '';
+            count = 0;
+        });
+    </script>
+</body>
+</html>

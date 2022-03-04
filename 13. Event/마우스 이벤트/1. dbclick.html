@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dbclick</title>
+    <style>
+        .my_div {
+            background: yellow;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>dbclick</h1>
+    <div class='my_div'></div>
+    <input class='clearbtn' type='button' value='clear' />
+    <div class='result'></div>
+    <script>
+        const div = document.querySelector('.my_div');
+        const btnClear = document.querySelector('.clearbtn');
+        const result = document.querySelector('.result');
+
+        div.addEventListener('click', (event) => {
+            result.innerHTML+= '<div>click</div>';
+        });
+
+        div.addEventListener('dblclick', (event) => {
+            result.innerHTML+= '<div>dblclick</div>';
+        });
+
+        div.addEventListener('mousedown', (event) => {
+            result.innerHTML+= '<div>mousedown</div>';
+        });
+
+        div.addEventListener('mouseup', (event) => {
+            result.innerHTML+= '<div>mouseup</div>';
+        });
+
+        btnClear.addEventListener('click', (event) => {
+            result.innerHTML= '';
+        });
+    </script>
+</body>
+</html>

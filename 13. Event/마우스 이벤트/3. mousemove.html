@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mousemove</title>
+    <style>
+        .my_div {
+            background: yellow;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>mousemove</h1>
+    <div class='my_div'></div>
+    <input class='clearbtn' type='button' value='clear'/>
+    <div class='result'></div>
+    <script>
+        const div = document.querySelector('.my_div');
+        const btnClear = document.querySelector('.clearbtn');
+        const result = document.querySelector('.result');
+
+        div.addEventListener('mousemove', (event) => {
+            result.innerHTML+= '<div>mousemove</div>';
+        });
+
+        btnClear.addEventListener('click', (event) => {
+            result.innerHTML= '';
+        count = 0;
+        });
+    </script>
+</body>
+</html>

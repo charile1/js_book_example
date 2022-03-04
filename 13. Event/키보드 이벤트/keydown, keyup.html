@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keydown,keyup</title>
+</head>
+<body>
+    <h1>keydown, keyup</h1>
+    <input class='input' type='text'>
+    <input class='clear' type='button' value='clear'>
+    <div class='result'></div>
+    <script>
+        const inputBox = document.querySelector('.input');
+        const btn_clear = document.querySelector('.clear');
+        const result = document.querySelector('.result');
+
+        inputBox.addEventListener('keydown', () => {
+            result.innerHTML += '<div>keydown</div>';
+        });
+
+        inputBox.addEventListener('keyup', () => {
+            result.innerHTML += '<div>keyup</div>';
+        });
+
+        btn_clear.addEventListener('click', () => {
+            result.innerHTML = '';
+        })
+    </script>
+</body>
+</html>
